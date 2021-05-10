@@ -1,19 +1,27 @@
 {
   "name": "chalktalk-test",
   "version": "1.0.0",
-  "description": "*Version 1.2*",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "run:server": "node server/index.js",
+    "start": "npm-run-all --parallel build run:server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sho13/chalktalk-test.git"
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sho13/chalktalk-test/issues"
-  },
-  "homepage": "https://github.com/sho13/chalktalk-test#readme"
+  "dependencies": {
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "npm-run-all": "^4.1.5",
+    "sirv-cli": "^1.0.0"
+  }
 }
